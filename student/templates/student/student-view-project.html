@@ -1,0 +1,38 @@
+{% extends "student/base.html" %}
+{% load static %}
+
+{% block title %}
+All your project list
+{% endblock %}
+
+{% block content %}
+<table class="table table-hover" style="table-layout: auto;">
+  <thead>
+    <tr>
+      <th scope="col">Project Name</th>
+      <th scope="col">Project Domain</th>
+      <th scope="col">Expected funding</th>
+      <th scope="col">Actual funding</th>
+      <th scope="col">Description</th>
+      <th scope="col">Rec.Letter</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for p1 in po %}
+    <tr>
+
+      <td>{{p1.p_name}}</td>
+      <td>{{p1.p_domain}}</td>
+      <td>{{p1.p_efund}}</td>
+      <td>{{sum}}</td>
+      <td style="height:100%;">{{p1.p_description}}</td>
+      <td><a href="{{p1.p_recommendation_pic_path}}" target="_blank">click here</a></td>
+
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}

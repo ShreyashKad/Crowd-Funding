@@ -1,0 +1,29 @@
+{% extends "student/base.html" %}
+{% load static %}
+
+{% block title %}
+View Names of people
+{% endblock %}
+
+{% block content %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name </th>
+      <th scope="col">Funding </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for p1 in po %}
+    <tr>
+
+      <td>YOO</td>
+      <td>1530</td>
+
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}

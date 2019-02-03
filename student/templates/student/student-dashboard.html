@@ -1,0 +1,22 @@
+{% extends "student/base.html" %}
+{% load static %}
+{% block content %}
+<div style="text-align:center;">
+  <img src="{{s.pic_path}}" alt="" height="200px" width="200px">
+  <div class="" style="font-size:20px;">
+      <span><i class="fa fa-book"></i></span>&nbsp<p style="display:inline;">Name: {{s.name}}</p>
+      <br>
+      <span><i class="fa fa-building"></i></span>&nbsp<p style="display:inline;">Department: {{s.department}}</p>
+      <br>
+      <span><i class="fa fa-envelope"></i></span>&nbsp<p style="display:inline;">Email: {{s.email}}</p>
+      <br>
+      <span><i class="fa fa-phone"></i></span>&nbsp<p style="display:inline;">Contact: {{s.contact}}</p>
+      <br>
+      <span><i class="fa fa-linkedin"></i></span>&nbsp<p style="display:inline;">Linkdin: {{s.linkedin}}</p>
+      <br>
+      <span><i class="fa fa-github"></i></span>&nbsp<p style="display:inline;">Github: {{s.github}}</p>
+  </div>
+
+
+</div>
+{% endblock %}

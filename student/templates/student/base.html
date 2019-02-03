@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>User  | Dashboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'student/css/vendor/bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'student/css/vendor/fontawesome/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'student/css/vendor/themify-icons/themify-icons.min.css'%}">
+    <link href="{% static 'student/css/vendor/animate.css/animate.min.css'%}" rel="stylesheet" media="screen">
+    <link href="{% static 'student/css/vendor/perfect-scrollbar/perfect-scrollbar.min.css'%}" rel="stylesheet" media="screen">
+    <link href="{% static 'student/css/vendor/switchery/switchery.min.css'%}" rel="stylesheet" media="screen">
+		<link href="{% static 'student/css/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css'%}" rel="stylesheet" media="screen">
+		<link href="{% static 'student/css/vendor/select2/select2.min.css'%}" rel="stylesheet" media="screen">
+		<link href="{% static 'student/css/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css'%}" rel="stylesheet" media="screen">
+		<link href="{% static 'student/css/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css'%}" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="{% static 'student/css/assets/css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'student/css/assets/css/plugins.css'%}">
+    <link rel="stylesheet" href="{% static 'student/css/assets/css/themes/theme-1.css'%}" id="skin_color" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+<!--?php include('include/sidebar.php');?   SIDEBAR      -->
+<div class="sidebar app-aside" id="sidebar">
+      <div class="sidebar-container perfect-scrollbar">
+
+<nav>
+
+          <!-- start: MAIN NAVIGATION MENU -->
+          <div class="navbar-title">
+            <span>Main Navigation</span>
+          </div>
+          <ul class="main-navigation-menu">
+            <li>
+              <a href="{% url 'student_dashboard' %}">
+                <div class="item-content">
+                  <div class="item-media">
+                    <i class="ti-home"></i>
+                  </div>
+                  <div class="item-inner">
+                    <span class="title"> Dashboard </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="{% url 'student_add_project' %}">
+                <div class="item-content">
+                  <div class="item-media">
+                    <i class="ti-plus"></i>
+                  </div>
+                  <div class="item-inner">
+                    <span class="title"> Add Projects </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+						<li>
+              <a href="{% url 'student_view_project' %}">
+                <div class="item-content">
+                  <div class="item-media">
+                    <i class="ti-view-list"></i>
+                  </div>
+                  <div class="item-inner">
+                    <span class="title"> View your Projects </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+
+						<li>
+						     <a href="{% url 'student-detail-about-crowdfunding' %}">
+						     <div class="item-content">
+						     	<div class="item-media">
+						           <i class="ti-clip"></i>
+						       </div>
+						      <div class="item-inner">
+						        <span class="title"> Details about crowdfunding </span>
+						      </div>
+						      </div>
+						      </a>
+						 </li>
+
+						<li>
+              <a href="{% url 'logout_action' %}">
+                <div class="item-content">
+                  <div class="item-media">
+                    <i class="ti-back-left"></i>
+                  </div>
+                  <div class="item-inner">
+                    <span class="title"> Logout </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+
+          </ul>
+          <!-- end: CORE FEATURES -->
+
+        </nav>
+        </div>
+    </div>
+
+<!-- SIDEBAR ENDS-->
+			<div class="app-content">
+
+						<!--php include('include/header.php');?  HEADER-->
+            <?php error_reporting(0);?>
+<header class="navbar navbar-default navbar-static-top">
+        <!-- start: NAVBAR HEADER -->
+        <div class="navbar-header">
+          <a href="#" class="sidebar-mobile-toggler pull-left hidden-md hidden-lg" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+            <i class="ti-align-justify"></i>
+          </a>
+          <a class="navbar-brand" href="#">
+            <h2 style="padding-top:2% ">Crowd Funding</h2>
+          </a>
+          <a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+            <i class="ti-align-justify"></i>
+          </a>
+          <a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="ti-view-grid"></i>
+          </a>
+        </div>
+        <!-- end: NAVBAR HEADER -->
+        <!-- start: NAVBAR COLLAPSE -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-right">
+            <!-- start: MESSAGES DROPDOWN -->
+              <li  style="padding-top:2% ">
+              <h2>Crowd Funding</h2>
+            </li>
+
+
+
+            <!-- end: USER OPTIONS DROPDOWN -->
+          </ul>
+          <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+          <div class="close-handle visible-xs-block menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+            <div class="arrow-left"></div>
+            <div class="arrow-right"></div>
+          </div>
+          <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+        </div>
+
+
+        <!-- end: NAVBAR COLLAPSE -->
+      </header>
+
+            <!--HEADER ENDS-->
+				<!-- end: TOP NAVBAR -->
+				<div class="main-content" >
+					<div class="wrap-content container" id="container">
+						<!-- start: PAGE TITLE -->
+						<section id="page-title">
+							<div class="row">
+								<div class="col-sm-8">
+									<h1 class="mainTitle">User |{% block title %}Dashboard {% endblock %}</h1>
+																	</div>
+
+							</div>
+						</section>
+						<!-- end: PAGE TITLE -->
+						<!-- start: BASIC EXAMPLE -->
+            {% block content %}
+            {% endblock %}
+						<!-- end: SELECT BOXES -->
+
+					</div>
+				</div>
+			</div>
+			<!-- start: FOOTER -->
+      <footer>
+       <div class="footer-inner">
+         <div class="pull-left">
+           &copy; <span class="current-year"></span><span class="text-bold text-uppercase"> Crowd Funding</span>. <span>All rights reserved</span>
+         </div>
+         <div class="pull-right">
+           <span class="go-top"><i class="ti-angle-up"></i></span>
+         </div>
+       </div>
+     </footer>
+			<!-- end: FOOTER -->
+
+
+		</div>
+		<!-- start: MAIN JAVASCRIPTS -->
+		<script src="{% static 'student/css/vendor/jquery/jquery.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/bootstrap/css/bootstrap.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/modernizr/modernizr.js'%}"></script>
+		<script src="{% static 'student/css/vendor/jquery-cookie/jquery.cookie.js'%}"></script>
+		<script src="{% static 'student/css/vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/switchery/switchery.min.js'%}"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="{% static 'student/css/vendor/maskedinput/jquery.maskedinput.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/autosize/autosize.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/selectFx/classie.js'%}"></script>
+		<script src="{% static 'student/css/vendor/selectFx/selectFx.js'%}"></script>
+		<script src="{% static 'student/css/vendor/select2/select2.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js'%}"></script>
+		<script src="{% static 'student/css/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js'%}"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CLIP-TWO JAVASCRIPTS -->
+		<script src="{% static 'student/css/assets/css/main.js'%}"></script>
+		<!-- start: JavaScript Event Handlers for this page -->
+		<script src="{% static 'student/css/assets/css/form-elements.js'%}"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				FormElements.init();
+			});
+		</script>
+		<!-- end: JavaScript Event Handlers for this page -->
+		<!-- end: CLIP-TWO JAVASCRIPTS -->
+	</body>
+</html>

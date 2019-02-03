@@ -1,0 +1,20 @@
+{% extends "investor/base.html" %}
+{% load static %}
+{% block content %}
+<div style="text-align:center;">
+  <img src="{{i.pic_path}}" alt="" height="200px" width="200px">
+  <div class="" style="font-size:20px;">
+      <span><i class="fa fa-book"></i></span>&nbsp<p style="display:inline;">Name: {{i.name}}</p>
+      <br>
+      <span><i class="fa fa-building"></i></span>&nbsp<p style="display:inline;">Company:{{i.company}}</p>
+      <br>
+      <span><i class="fa fa-envelope"></i></span>&nbsp<p style="display:inline;">Email: {{i.email}}</p>
+      <br>
+      <span><i class="fa fa-phone"></i></span>&nbsp<p style="display:inline;">Contact: {{i.contact}}</p>
+      <br>
+      <span><i class="fa fa-linkedin"></i></span>&nbsp<p style="display:inline;">Linkdin: {{i.linkedin}}</p>
+  </div>
+
+
+</div>
+{% endblock %}

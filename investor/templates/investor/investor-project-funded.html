@@ -1,0 +1,27 @@
+{% extends "investor/base.html" %}
+{% load static %}
+{% block content %}
+
+<div>
+	<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Project ID</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Amount Invested</th>
+    </tr>
+  </thead>
+  <tbody>
+		{% for a,l in main %}
+    <tr>
+      <th scope="row">{{a.project_id}}</th>
+      <td>{{l}}</td>
+      <td>{{a.date_of_funding}}</td>
+      <td>{{a.amount}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "student/base.html" %}
+{% load static %}
+
+{% block title %}
+Information about crowdfunding
+{% endblock %}
+{% block content %}
+
+<form class="" action="{% url 'student-detail-about-crowdfunding-action' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div style="text-align:center;">
+  <textarea name="detail" rows="8" cols="80" placeholder="Enter your ways available for crowdfunding" style="margin-top:20px;width:700px;text-align:center"></textarea></div>
+  <div class="">
+    <button type="submit" class="btn btn-primary pull-right" id="submit" name="submit" style="margin-right:200px;">
+      Submit <i class="fa fa-arrow-circle-right"></i>
+    </button>
+  </div>
+
+
+</form>
+
+{% endblock %}

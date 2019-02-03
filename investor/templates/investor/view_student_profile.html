@@ -1,0 +1,64 @@
+{% extends "investor/base.html" %}
+{% load static %}
+
+{% block title %}
+{{s.name}} Profile
+{% endblock %}
+{% block content %}
+<div style="text-align:center;">
+  <div style="text-align:center;">
+    <img src="{{s.pic_path}}" alt="" height="200px" width="200px">
+    <div style="text-align:center;font-size:20px;">
+      Contact Details
+    </div>
+    <div class="" style="font-size:15px;">
+        <span><i class="fa fa-book"></i></span>&nbsp<p style="display:inline;">Name: {{s.name}}</p>
+        <br>
+        <span><i class="fa fa-building"></i></span>&nbsp<p style="display:inline;">Department:{{s.department}}</p>
+        <br>
+        <span><i class="fa fa-envelope"></i></span>&nbsp<p style="display:inline;">Email: {{s.email}}</p>
+        <br>
+        <span><i class="fa fa-phone"></i></span>&nbsp<p style="display:inline;">Contact:{{s.contact}}</p>
+        <br>
+        <span><i class="fa fa-linkedin"></i></span>&nbsp<p style="display:inline;">Linkdin:{{s.linkedin}} </p>
+        <br>
+        <span><i class="fa fa-github"></i></span>&nbsp<p style="display:inline;">Github:{{s.github}}</p>
+    </div>
+
+<hr>
+  </div>
+  <div class="text-align:center;" style="font-size:20px;">
+    <p>crowdfunding policy of {{s.name}}</p>
+    <p style="font-size:15px;">{{c.detail}}</p>
+
+  </div>
+<hr>
+  <table class="table table-hover" style="text-align:center;">
+    <thead>
+      <tr>
+        <th scope="col">Project ID</th>
+        <th scope="col">Project Name</th>
+        <th scope="col">Project Domain</th>
+        <th scope="col">Expected funding</th>
+        <th scope="col">Funding received</th>
+
+
+
+      </tr>
+    </thead>
+    {% for pi in p %}
+    <tbody style="">
+      <tr>
+        <th scope="row">1</th>
+        <td>abcd</td>
+        <td>ML</td>
+        <td>1000</td>
+        <td>500</td>
+
+      </tr>
+    </tbody>
+  </table>
+  {% endfor %}
+
+</div>
+{% endblock %}

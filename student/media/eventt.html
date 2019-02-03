@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  background-color:url("../images/menu.svg")
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 50%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input , textarea{
+  padding: 10px;
+  width: 75%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+
+
+
+button {
+  background-color: #4CAF50;
+  width: 150px;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+</style>
+<body>
+
+<form method = "POST" id="regForm" action="../index.php">
+
+  <h1>EVENT FORM</h1>
+  <div >
+  <b>Event name :
+    <p><input placeholder="Enter event name" name="eventname"></p>
+	
+	<b>Venue :
+	<p><input placeholder="Enter venue" name="venue"></p>
+    
+    
+	<b>Date :
+	<p><input placeholder="Enter date" type="date"></p>
+	
+	<b>Time :
+	<p><input placeholder="Enter time" type="time"></p>
+	
+	<b>More Information :
+	<p><textarea style="height:100px:"></textarea></p>
+	
+	<button type="button" >Submit</button>
+ </div>
+</form>
+
+
+
+
+</body>
+</html>

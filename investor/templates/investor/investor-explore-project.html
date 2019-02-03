@@ -1,0 +1,83 @@
+{% extends "investor/base.html" %}
+{% load static %}
+{% block content %}
+
+<form action="{% url 'investor_project_search' %}" method="POST">
+	{% csrf_token %}
+	<input type="text" name="search"/>
+	<button>Search</button>
+</form>
+{% for pi,si in main  %}
+<form action="{% url 'investor_fundform'  pid=pi.id %}">
+<span>
+<div class="box" style="border:1px solid #288EFD; padding:10px; margin-top: 10px">
+	<tr>
+		<td style="height:20px;">
+			<a href="{% url 'view_student_profile' name=si.name %}"><img src="{{si.pic_path}}" alt="" height="40px" width="40px" style="float:left;"></a>
+			<a><h3 style="float:relative; margin-left: 10px;color:#288EFD"><a href="{% url 'view_student_profile' name=si.name %}">{{si.name}}</a></h3></a>
+
+		</td>
+		<hr>
+		<tr>
+			<td>
+				 <h3 style="float:relative; margin-left: 10px; style="color:#288EFD"><b>Project name: {{pi.p_name}}</b> </h3>
+			</td>
+		</tr>
+	</tr>
+	<br>
+	<tr>
+		<td>
+				<p style="font-size:small; float:relative;margin-left:40px;"><b>Project Id:</b> #{{pi.id}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p  style="margin-left: 40px; font-size:small;"><b>Project name: {{pi.p_name}}</b> </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p  style="margin-left: 40px; font-size:small;"><b>Domain: {{pi.p_domain}}</b> </p>
+		</td>
+	</tr>
+
+	<tr>
+		<div class="" style="margin-left:40px;"><b>Description:</b></div>
+		<td>
+			<p style="margin-left: 40px">{{pi.p_description}}</p>
+		</td>
+	</tr>
+	<tr>
+
+		<td>
+			<p  style="margin-left: 40px; font-size:small;"><b>Expected Fund:</b> {{pi.p_efund}} </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p  style="margin-left: 40px; font-size:small;"><b>Funds received:</b> {{pi.p_afund}} </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p  style="margin-left: 40px; font-size:small;"><b>Link for Recommendation letter:</b> <a href="{{pi.0.p_recommendation_pic_path}}"  target="_blank">click here</a> </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p  style="margin-left: 40px; font-size:small;"><b>Last day for crowdfunding:</b> {{pi.0.p_enddate}} </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button class="btn-primary" style="margin-left: 40px;">Fund</button>
+		</td>
+	</tr>
+</span>
+</form>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
